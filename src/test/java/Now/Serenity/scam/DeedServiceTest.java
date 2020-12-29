@@ -8,6 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.io.File;
 import java.util.Collection;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,8 +21,18 @@ class DeedServiceTest {
 
     @Test
     void listFiles() {
+        // TODO: needs mocks
         Collection<File> files = deedService.listFiles();
 
         assertNotNull(files);
+    }
+
+    @Test
+    void parseDeeds() {
+        // TODO: needs mocks
+        Collection<File> files = deedService.listFiles();
+        List<Deed> deeds = deedService.parseDeeds(files);
+
+        assertNotNull(deeds);
     }
 }

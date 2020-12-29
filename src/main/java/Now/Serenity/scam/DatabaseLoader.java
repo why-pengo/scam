@@ -17,11 +17,8 @@ public class DatabaseLoader implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        this.repository.save(new Deed("Frontdoor", "filename1.jpg",
-                "image", new Timestamp(System.currentTimeMillis())));
-        this.repository.save(new Deed("Driveway", "filename2.jpg",
-                "image", new Timestamp(System.currentTimeMillis() - 1)));
-        this.repository.save(new Deed("Backyard", "filename3.jpg",
-                "image", new Timestamp(System.currentTimeMillis() + 1)));
+        this.repository.save(new Deed("Frontdoor", "filename1.jpg", "image"));
+        this.repository.save(new Deed("Driveway", "filename2.jpg", "image"));
+        this.repository.save(new Deed("Backyard", "filename3.jpg", "image"));
     }
 }

@@ -3,7 +3,8 @@ package Now.Serenity.scam;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.sql.Timestamp;
+import java.io.File;
+import java.nio.file.attribute.FileTime;
 import java.util.Objects;
 
 @Entity
@@ -12,15 +13,14 @@ public class Deed {
     private String camera;
     private String filename;
     private String type;  // image or video
-    private Timestamp created;
+    private File fileRef;
 
     public Deed() { }
 
-    public Deed(String camera, String filename, String type, Timestamp created) {
+    public Deed(String camera, String filename, String type) {
         this.camera = camera;
         this.filename = filename;
         this.type = type;
-        this.created = created;
     }
 
     public long getId() {
@@ -51,11 +51,12 @@ public class Deed {
         this.type = type;
     }
 
-    public Timestamp getCreated() {
-        return created;
+    public File getFileRef() {
+        return fileRef;
     }
-    public void setCreated(Timestamp created) {
-        this.created = created;
+
+    public void setFileRef(File fileRef) {
+        this.fileRef = fileRef;
     }
 
     @Override
@@ -65,7 +66,6 @@ public class Deed {
                 ", camera='" + camera + '\'' +
                 ", filename='" + filename + '\'' +
                 ", type='" + type + '\'' +
-                ", created=" + created +
                 '}';
     }
 
@@ -75,12 +75,11 @@ public class Deed {
         if (o == null || getClass() != o.getClass()) return false;
         Deed deed1 = (Deed) o;
         return id == deed1.id && camera.equals(deed1.camera)
-                && filename.equals(deed1.filename) && type.equals(deed1.type)
-                && created.equals(deed1.created);
+                && filename.equals(deed1.filename) && type.equals(deed1.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, camera, filename, type, created);
+        return Objects.hash(id, camera, filename, type);
     }
 }
