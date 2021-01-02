@@ -21,7 +21,7 @@ public class DeedService {
     @Value("${base-dir}")
     private String baseDir;
 
-    public Collection<File> listFiles() {
+    public Collection<File> readFileSystem() {
         File listDir = new File(baseDir);
         Collection<File> files = FileUtils.listFiles(listDir, new String[]{"jpg", "mp4"}, true);
         files.forEach((file -> logger.info(file.toString())));
@@ -29,7 +29,7 @@ public class DeedService {
         return files;
     }
 
-    public List<Deed> parseDeeds(Collection<File> files) {
+    public List<Deed> parseFileSystemToDeeds(Collection<File> files) {
         List<Deed> deeds = new ArrayList<>();
         //0 = {File@9729} "/Users/jmorgan/scam_tmp/videos/backyard2/Backyard2_01_20201228003956.jpg"
         //1 = {File@9730} "/Users/jmorgan/scam_tmp/videos/backyard2/Backyard2_01_20201227064433.jpg"

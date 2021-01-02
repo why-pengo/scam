@@ -3,7 +3,6 @@ package Now.Serenity.scam;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.io.File;
@@ -20,18 +19,18 @@ class DeedServiceTest {
     DeedService deedService;
 
     @Test
-    void listFiles() {
+    void readFileSystemTest() {
         // TODO: needs mocks
-        Collection<File> files = deedService.listFiles();
+        Collection<File> files = deedService.readFileSystem();
 
         assertNotNull(files);
     }
 
     @Test
-    void parseDeeds() {
+    void parseFileSystemToDeedsTest() {
         // TODO: needs mocks
-        Collection<File> files = deedService.listFiles();
-        List<Deed> deeds = deedService.parseDeeds(files);
+        Collection<File> files = deedService.readFileSystem();
+        List<Deed> deeds = deedService.parseFileSystemToDeeds(files);
 
         assertNotNull(deeds);
     }
