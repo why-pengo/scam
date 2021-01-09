@@ -1,4 +1,4 @@
-package Now.Serenity.scam;
+package Now.Serenity.scam.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,10 +1,9 @@
-package Now.Serenity.scam;
+package Now.Serenity.scam.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.File;
-import java.nio.file.attribute.FileTime;
 import java.util.Objects;
 
 @Entity

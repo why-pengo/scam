@@ -1,5 +1,7 @@
-package Now.Serenity.scam;
+package Now.Serenity.scam.controllers;
 
+import Now.Serenity.scam.services.DeedService;
+import Now.Serenity.scam.domain.Deed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +17,8 @@ public class ApiController {
     @Autowired
     DeedService deedService;
 
-    @RequestMapping(value = "list")
-    public List<Deed> list() {
+    @RequestMapping(value = "/listDeeds")
+    public List<Deed> listDeeds() {
         Collection<File> files = deedService.readFileSystem();
         return deedService.parseFileSystemToDeeds(files);
     }

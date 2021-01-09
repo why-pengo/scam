@@ -1,5 +1,7 @@
 package Now.Serenity.scam;
 
+import Now.Serenity.scam.domain.Deed;
+import Now.Serenity.scam.services.DeedService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
