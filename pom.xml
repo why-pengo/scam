@@ -16,7 +16,20 @@
 
 	<properties>
 		<java.version>11</java.version>
+        <maven.build.timestamp.format>yyyyMMMdd</maven.build.timestamp.format>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<build>
+				<finalName>${project.name}-${project.version}-${maven.build.timestamp}-dev</finalName>
+			</build>
+			<properties>
+				<spring.profiles.active>dev</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>
@@ -57,6 +70,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 </project>
