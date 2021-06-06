@@ -16,7 +16,7 @@ import java.util.List;
 public class DeedService {
     private static final Logger logger = LoggerFactory.getLogger(DeedService.class);
 
-    @Value("${base-dir}")
+    @Value(value = "${base-dir}")
     private String baseDir;
 
     public Collection<File> readFileSystem() {
@@ -48,7 +48,7 @@ public class DeedService {
                 deed.setType("video");
             }
             // File Reference Object
-            deed.setFileRef(file);
+            deed.setPath(file.toString());
 
             deeds.add(deed);
             }
