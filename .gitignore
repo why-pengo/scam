@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# don't save the keystore
+src/main/resources/scam.p12
+
 ### STS ###
 .apt_generated
 .classpath

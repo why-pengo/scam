@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>Now.Serenity</groupId>
 	<artifactId>scam</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>scam</name>
 	<description>Security camera archive manager</description>
 
@@ -87,9 +87,20 @@
 			</plugin>
 		</plugins>
 		<resources>
+<!--            We need to exclude our keystore from Maven resource filtering -->
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
+                <excludes>
+					<exclude>scam.p12</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>scam.p12</include>
+				</includes>
 			</resource>
 		</resources>
 	</build>
