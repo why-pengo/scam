@@ -1,16 +1,15 @@
 package Now.Serenity.scam.domain;
 
-import lombok.*;
-import javax.persistence.Entity;
+import lombok.Data;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Getter
-@Setter
-@ToString
-@Entity
+@Data
 public class Deed {
-    private @Id @GeneratedValue long id;
+    private @Id
+    @GeneratedValue
+    long id;
     private String camera;
     private String filename;
     private String type;  // image or video
